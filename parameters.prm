@@ -1,0 +1,106 @@
+# Listing of Parameters
+# ---------------------
+subsection Problem Description
+  # Input mesh name in ucd
+  set Input file = model/beam.ucd
+
+  # Geometry x
+  set Geo x = 100
+
+  # Geometry y
+  set Geo y = 1
+
+  # Geometry z
+  set Geo z = 10
+
+  # Total external pressure applied for pre-stretch
+  set Total force = 0
+
+  # Total voltage
+  set Total voltage = 90000
+end
+
+subsection Finite element system
+  # Displacement system polynomial order
+  set Polynomial degree = 1
+
+  # Gauss quadrature order
+  set Quadrature order  = 2
+end
+
+
+subsection Geometry
+  # Global refinement level
+  set Global refinement   = 0
+
+  # Global grid scaling factor
+  set Grid scale          = 0.001
+end
+
+
+subsection Linear solver
+ # Type of solver used to solve the linear system
+ set Solver type              = Direct
+ #set Solver type              = GMRES
+end
+
+
+subsection Nonlinear solver
+  # Number of Newton-Raphson iterations allowed
+  set Max iterations Newton-Raphson = 10
+
+  # Displacement error tolerance
+  set Tolerance displacement        = 1.0e-4
+
+  # Force residual tolerance
+  set Tolerance force               = 1.0e-4
+end
+
+
+
+subsection Material properties
+  # Shear modulus
+  set Shear modulus   = 43000
+
+  # Bulk modulus
+  set Bulk modulus   = 4.3e9
+
+  # Jm
+  set Jm = 7
+
+  # Epsilon
+  set Epsilon = 4.12225e-11
+
+  # Density
+  set Density   = 1000.0
+
+  # Pre-stretch x
+  set Pre-stretch x = 2
+
+  # Pre-stretch y
+  set Pre-stretch y = 2
+
+  # Pre-stretch z
+  set Pre-stretch z = 0.25
+
+  # Surface charge density
+  set Surface charge density = 0
+end
+
+
+subsection Time
+  # End time for pre-stretch
+  set Pre End time       = 0.0
+
+  # Time step size for pre-stretch
+  set Pre Time step size = 0.0
+
+  # End time
+  set End time       = 1
+
+  # Time step size
+  set Time step size = 0.05
+
+end
+
+

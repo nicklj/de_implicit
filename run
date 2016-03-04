@@ -1,0 +1,9 @@
+#!/bin/bash
+if [ -f *.vtk ] ; then
+    read -p "Old result file(s) exist. Delete them ALL?(y/n)" yn
+    case $yn in
+        [Yy]* ) rm *.vtk;;
+        [Nn]* ) exit;;
+    esac
+fi
+./main

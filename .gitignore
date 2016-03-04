@@ -1,0 +1,12 @@
+*.vtk
+*.swp
+tags
+main
+*.o
+CMakeFiles
+CMakeCache.txt
+cmake_install.cmake
+.cproject
+.project
+Makefile
+*.dat
