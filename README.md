@@ -5,16 +5,18 @@ This code is developed based on example step-44 of the deal.II FEM library, and
 can be used (but not limited) for dielectric elastomer FEM simluation. 
 It is the supplimentary code to the article 
 
-"3D multi-field dielectric elastomer element for incompressible material behavior simulation"
+"3D multi-field element for incompressible dielectirc elastomer simulation"
 
-1. Deal.II Requirements:
+1. deal.II Requirements:
 ------------------------
 
-The source code requires the deal.II 8.4.0 library or later for
+The source code requires the deal.II 8.3.0 library or later for
 compiling. For the program to work properly, deal.II should be 
-configured with support for Trilinos and UMFPACK. The user is responsible for
-correctly setup the deal.II environment for successfully compile
-and run the program. 
+configured with support for Trilinos, UMFPACK, MPI, and C++11. 
+The user is responsible for correctly setup the deal.II environment 
+for successfully compiling and running the program. 
+The details on deal.II installation can be found in: 
+https://dealii.org/
 
   
 2. Installation
@@ -30,12 +32,14 @@ The program can then be compiled by running
 	cmake .
 	make
 
+
 3. Simulation parameters
 -----------------------
 
 The program uses parameter files to set its runtime variables. 
 This configuration file is located at: 
-    ./ parameters.prm
+    ./parameters.prm
+
 
 4. Licence Informations
 -----------------------
