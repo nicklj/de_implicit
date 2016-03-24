@@ -33,7 +33,7 @@ The program can then be compiled by running
 	make
 
 You can run the program by simply inputing
-    ./run
+	./run
 
 
 3. Simulation parameters
