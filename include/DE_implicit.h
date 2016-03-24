@@ -82,6 +82,9 @@ const double PI = 3.141592653589793238;
 
 using namespace dealii;
 
+namespace deprog
+{
+
 // Define material constitutive model
 template <int dim>
 class Material_gent_DE
@@ -651,5 +654,6 @@ class Solid
     std::set<types::global_dof_index> leftmid_zdof;
 };
 
+}
 
 #endif

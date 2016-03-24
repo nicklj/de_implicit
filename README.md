@@ -5,7 +5,7 @@ This code is developed based on example step-44 of the deal.II FEM library, and
 can be used (but not limited) for dielectric elastomer FEM simluation. 
 It is the supplimentary code to the article 
 
-"3D multi-field element for incompressible dielectirc elastomer simulation"
+"A 3D multi-field element for simulating dielectric elastomer (DE) electromechanical coupling behavior"
 
 1. deal.II Requirements:
 ------------------------
@@ -22,7 +22,7 @@ https://dealii.org/
 2. Installation
 ---------------
 
-You can cloned it from github
+You can clone it from github
 
 	git clone https://github.com/nicklj/de_implicit.git
 
@@ -31,6 +31,9 @@ The program can then be compiled by running
 	cd de_implicit
 	cmake .
 	make
+
+You can run the program by simply inputing
+    ./run
 
 
 3. Simulation parameters

@@ -27,6 +27,8 @@
 
 using namespace dealii;
 
+namespace deprog
+{
 //Construction for the solid class
 template <int dim>
 Solid<dim>::Solid(const std::string &input_file)
@@ -1454,7 +1456,7 @@ double Solid<dim>::get_l2_norm(const std::vector<double> &vec)
 
 
 /**********************************************************************************/
-
+// Generate meshes
 template <int dim>
 void Solid<dim>::make_grid()
 {
@@ -1678,6 +1680,7 @@ void Solid<dim>::run()
 }
 
 
+}
 
 
 int main (int argc, char *argv[])
@@ -1689,7 +1692,7 @@ int main (int argc, char *argv[])
 	Utilities::MPI::MPI_InitFinalize mpi_initialization (argc, argv,
 									     numbers::invalid_unsigned_int);
 
-      Solid<3> solid_3d("parameters.prm");
+      deprog::Solid<3> solid_3d("parameters.prm");
       solid_3d.run();
 
     }

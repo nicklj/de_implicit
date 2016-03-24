@@ -1,29 +1,9 @@
-##
-#  CMake script for the step-44 tutorial program:
-##
-
 # Set the name of the project and target:
 SET(TARGET "main")
 SET(CMAKE_CXX_FLAGS "-pthread")
 
-# Declare all source files the target consists of. Here, this is only
-# the one step-X.cc file, but as you expand your project you may wish
-# to add other source files as well. If your project becomes much larger,
-# you may want to either replace the following statement by something like
-#  FILE(GLOB_RECURSE TARGET_SRC  "source/*.cc")
-#  FILE(GLOB_RECURSE TARGET_INC  "include/*.h")
-#  SET(TARGET_SRC ${TARGET_SRC}  ${TARGET_INC})
-# or switch altogether to the large project CMakeLists.txt file discussed
-# in the "CMake in user projects" page accessible from the "User info"
-# page of the documentation.
 
-FILE(GLOB_RECURSE TARGET_SRC "src/*.cc")
-FILE(GLOB_RECURSE TARGET_INC include/*h)
-SET(TARGET_SRC ${TARGET_SRC} ${TARGET_INC})
-INCLUDE_DIRECTORIES("include/")
-
-# Usually, you will not need to modify anything beyond this point...
-
+########################################
 CMAKE_MINIMUM_REQUIRED(VERSION 2.8.8)
 
 FIND_PACKAGE(deal.II 8.3 QUIET
@@ -39,8 +19,30 @@ ENDIF()
 
 
 DEAL_II_INITIALIZE_CACHED_VARIABLES()
-PROJECT(${TARGET})
+
+########################################
+FILE(GLOB TARGET_SRC "src/*.cc")
+#FILE(GLOB TARGET_INC "include/*h")
+#SET(TARGET_SRC ${TARGET_SRC} ${TARGET_INC})
+INCLUDE_DIRECTORIES("include/")
+
+PROJECT(DE_IMPLICIT)
 #ADD_EXECUTABLE(${TARGET} ${TARGET_SRC})
 #DEAL_II_SETUP_TARGET(${TARGET})
+
+
+
+########################################
+#ADD_CUSTOM_TARGET(debug
+  #COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Debug ${CMAKE_SOURCE_DIR}
+  #COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target all
+  #COMMENT "Switch CMAKE_BUILD_TYPE to Debug"
+  #)
+
+#ADD_CUSTOM_TARGET(release
+  #COMMAND ${CMAKE_COMMAND} -DCMAKE_BUILD_TYPE=Release ${CMAKE_SOURCE_DIR}
+  #COMMAND ${CMAKE_COMMAND} --build ${CMAKE_BINARY_DIR} --target all
+  #COMMENT "Switch CMAKE_BUILD_TYPE to Release"
+  #)
 
 DEAL_II_INVOKE_AUTOPILOT()
